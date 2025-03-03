@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container {
+  display: flex;
+  flex-direction: row; /* 水平排列 */
+  width: 100%; /* 设置宽度 */
+  overflow: hidden; /* 隐藏溢出内容 */
+  border: 1px solid #ccc;
+}
+
+.list {
+  display: flex;
+  flex: 1;
+  overflow-x: auto; /* 水平方向滚动 */
+  padding: 10px;
+}
+
+.item {
+  flex: 0 0 auto; /* 禁止 flex 收缩 */
+  padding: 10px;
+  border-right: 1px solid #eee;
+}
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="list">
+          <div class="item">Item 1</div>
+          <div class="item">Item 2</div>
+          <div class="item">Item 3</div>
+          <div class="item">Item 4</div>
+          <div class="item">Item 5</div>
+          <div class="item">Item 6</div>
+          <div class="item">Item 7</div>
+          <div class="item">Item 8</div>
+          <div class="item">Item 9</div>
+          <div class="item">Item 10</div>
+        </div>
+      </div>
+
+</body>
+</html>

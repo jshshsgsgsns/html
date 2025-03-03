@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;  /* 水平居中 */
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        p{
+            width: 200px;
+            height: 200px;
+            font-size: 30px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <form >
+            <input type="text">
+            <input type="password">
+            <div id = "button">
+                
+            </div>
+        </form>
+    </div>
+   
+
+    <script>
+        const button = document.querySelector('button')
+        button.addEventListener('click',function(){
+            localStorage.setItem('token','123')
+            window.location.href = '1.html'         
+        })
+    </script>
+</body>
+</html>

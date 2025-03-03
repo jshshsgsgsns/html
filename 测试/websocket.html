@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+</head>
+<body>
+    <h1>Chat Room</h1>
+    <input type="text" id="messageInput" placeholder="Type a message">
+    <button onclick="sendMessage()">Send</button>
+    <ul id="messages"></ul>
+
+    <script src="https://cdn.jsdelivr.net/npm/sockjs-client/dist/sockjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/stompjs/lib/stomp.min.js"></script>
+    <script>
+        const socket = new SockJS('http://localhost:8080/chat');
+        const stompClient = Stomp.over(socket);
+
+        stompClient.connect({}, (frame) => {
+            // console.log('Connected: ' + frame);
+
+            // 订阅公共聊天频道
+            stompClient.subscribe('/topic/public', (message) => {
+                const chatMessage = JSON.parse(message.body);
+                showMessage(chatMessage);
+            });
+        });
+
+        // 发送消息
+        function sendMessage() {
+            const message = document.getElementById('messageInput').value.trim();
+            if (message) {
+                const chatMessage = {
+                    content: message,
+                    sender: 'User' // 可以替换为实际用户名
+                };
+                stompClient.send('/app/chat.sendMessage', {}, JSON.stringify(chatMessage));
+                document.getElementById('messageInput').value = '';
+            }
+        }
+
+        // 显示消息
+        function showMessage(chatMessage) {
+            const messages = document.getElementById('messages');
+            const li = document.createElement('li');
+            li.textContent = `${chatMessage.sender}: ${chatMessage.content}`;
+            messages.appendChild(li);
+        }
+    </script>
+</body>
+</html>

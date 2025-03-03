@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <td>姓名</td>
+                <td>密码</td>
+            </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>wang</td>
+            <td>123</td>
+        </tr>
+        </tbody>
+    </table>
+    <script>
+        const tbody =document.querySelector('tbody')
+        
+        fetch('http://localhost:8080/api/login/get')
+        .then(response => response.json())  // 将响应转换为 JSON
+        .then(data => {
+            console.log(data); 
+            data.data.forEach(item => {
+            const row = document.createElement('tr'); // 创建一个表格行
+
+            // 假设每个 item 对象有 id, name, age 属性
+            const cell1 = document.createElement('td');
+            cell1.textContent = item.username;  // 填充 name
+            row.appendChild(cell1);
+
+            const cell2 = document.createElement('td');
+            cell2.textContent = item.password;  // 填充 password
+            row.appendChild(cell2);
+
+            // 将行添加到表格的主体中
+            tbody.appendChild(row);
+        });
+        })
+        
+        .catch(error => console.error('Error fetching data:', error));
+
+    </script>
+</body>
+</html>

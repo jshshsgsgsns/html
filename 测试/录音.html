@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>语音转文字示例</title>
+</head>
+<body>
+    <h1>语音转文字示例</h1>
+    <button id="start-btn">开始录音</button>
+    <button id="stop-btn">停止录音</button>
+    <p id="output"></p>
+
+    <script>
+        const startBtn = document.getElementById('start-btn');
+        const stopBtn = document.getElementById('stop-btn');
+        const output = document.getElementById('output');
+
+        // 检查浏览器支持
+        if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+            const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+            const recognition = new SpeechRecognition();
+
+            // 配置语音识别
+            recognition.lang = 'zh-CN'; // 设置语言为中文
+            recognition.interimResults = true; // 返回临时结果
+            recognition.continuous = false; // 不连续识别
+
+            // 处理识别结果
+            recognition.onresult = (event) => {
+                const transcript = event.results[0][0].transcript;
+                output.textContent = transcript; // 显示识别结果
+            };
+
+            recognition.onend = () => {
+                console.log('语音识别结束');
+            };
+
+            recognition.onerror = (event) => {
+                console.error('语音识别出错:', event.error);
+            };
+
+            // 启动语音识别
+            startBtn.addEventListener('click', () => {
+                recognition.start();
+                output.textContent = '正在录音...';
+            });
+
+            // 停止语音识别
+            stopBtn.addEventListener('click', () => {
+                recognition.stop();
+                output.textContent = '录音已停止';
+            });
+        } else {
+            output.textContent = '当前浏览器不支持语音识别';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Navigation Bar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home" onclick="showContent('home')">Home</a></li>
+                <li><a href="#" onclick="showContent('about')">About</a></li>
+                <li><a href="#" onclick="showContent('services')">Services</a></li>
+                <li><a href="#" onclick="showContent('contact')">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="content">
+        <h2>Home</h2>
+        <p>Welcome to our website! This is the home page.</p>
+    </section>
+
+    <section id="about" class="content">
+        <h2>About</h2>
+        <p>This is the about section. Learn more about us here.</p>
+    </section>
+
+    <section id="services" class="content">
+        <h2>Services</h2>
+        <p>We offer a wide range of services. Explore what we provide!</p>
+    </section>
+
+    <section id="contact" class="content">
+        <h2>Contact</h2>
+        <p>Get in touch with us through this section.</p>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

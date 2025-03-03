@@ -1,0 +1,63 @@
+/* 自定义提示框背景 */
+.custom-alert {
+    display: none; /* 默认隐藏 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 半透明背景 */
+    z-index: 9999; /* 确保提示框在其他内容之上 */
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* 提示框内容 */
+  .custom-alert-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    text-align: center;
+    min-width: 200px;
+  }
+  
+  /* 提示框消息文本 */
+  #alertMessage {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* 关闭按钮 */
+  .close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+  
+  .close-btn:hover {
+    color: #f00;
+  }
+  
+  /* 按钮样式 */
+  #showBtn {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  #showBtn:hover {
+    background-color: #0056b3;
+  }
+  

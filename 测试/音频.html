@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>123</button>
+    <script>
+
+    voices = window.speechSynthesis.getVoices();
+
+
+        function speak(text) {
+    const utterance = new SpeechSynthesisUtterance(text);
+
+    // 设置语音属性（可选）
+    utterance.voice = voices[0]; // 选择语音
+    utterance.pitch = 1; // 音调 (0-2)
+    utterance.rate = 1; // 语速 (0.1-10)
+    utterance.volume = 1; // 音量 (0-1)
+
+    // 播放音频
+    window.speechSynthesis.speak(utterance);
+}
+
+// 调用函数
+    let button = document.querySelector('button');
+    button.addEventListener('click', () =>{
+        speak("你好，世界")
+    })
+    </script>
+</body>
+</html>

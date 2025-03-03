@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>发送</button>
+</body>
+<script>
+    const button = document.querySelector('button')
+
+    function subform(){
+        fetch("http://localhost:8080/diary/test",{
+            method:'POST',
+            credentials: 'include', // 确保发送 Cookie
+            headers:{
+                'Content-Type' : 'application/json',
+                
+            }
+        })
+        .then
+    }
+
+    button.addEventListener('click',)
+</script>
+</html>

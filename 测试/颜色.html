@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>调配颜色</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <div>
+
+    </div>
+
+    <input type="text">
+    <input type="text">
+    <input type="text">
+
+    <button>提交</button>
+    <script>
+
+        let color = document.querySelector('div');
+        let colors = document.querySelectorAll('input');
+        let submit = document.querySelector('button');
+        // let colors = Array.from(colors1)
+
+        submit.addEventListener('click',function(){
+            // let se = colors[0].value.concat(colors[1].value).concat(colors[2].value)
+            // console.log(se)
+
+            let se = `rgb(${colors[0].value},${colors[1].value},${colors[2].value})`
+
+            color.style.backgroundColor= se;
+
+        })
+        
+        
+    </script>
+</body>
+</html>
