@@ -1,0 +1,38 @@
+<h1>ref和reactive的差别</h1>
+<p>ref---》基本数据类型
+    <br>
+    reactive----》对象类型类型
+</p>
+
+<h1>ref</h1>
+<p>ref针对的是基础数据类型</p>
+<P>ref 将变量变成可以浏览器实时渲染，等于获取网页文档标签元素对象，对对象的值进行修改</P>
+
+<p>import ref from 'vue'
+    <br>
+    let people = ref('zhansan')
+</p>
+
+<p>
+    ref函数将people从字符串变成对象
+    <br>
+    在后续的对people的使用，要用people.value对值的获取
+    <br>
+    但在html里面变量直接使用people对象。
+    <br>
+    这个人名字：{{people}}
+</p>
+
+<h1>rective</h1>
+<p>
+    将对象变量(数组也是)变成可以浏览器实时渲染的函数
+    <br>
+    let people = reactive({
+        <br>
+        id : 123,
+        <br>
+        name : 'zhangsan'
+        <br>
+    })
+</p>
+
