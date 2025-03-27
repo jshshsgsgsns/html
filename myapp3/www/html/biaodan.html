@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>王铖的空间</title>
+    <link rel="stylesheet" href="../css/biaodan.css">
+</head>
+<body>
+    <div id="container">
+        <div id="header"></div>
+
+        <div id="main">
+            <div id="main-left">
+                <nav>
+                    <ul>
+                    <li><a href="#home">首页</a></li>
+                    <li><a href="#insert">添加</a></li>
+                    <li><a href="#diary">日记</a></li>
+                    <li><a href="">234</a></li>
+                    <li><a href="">345</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div id="main-right">
+                <!-- 首页代码 -->
+                <div id="home" class="active">
+                    <div>                         
+                        <div>
+                        <img src="zy/12.webp"> 
+                        <p>今天吃饭了</p>
+                        </div>
+                        <p>time</p>
+                    </div>
+
+                    <button id="homebut">ss</button>
+                </div>
+                <!--  -->
+
+                <div id="insert">
+                    <div class="container">
+                        <h1>上传图片和文字</h1>
+                
+                        <form action="#" method="post" enctype="multipart/form-data" class="upload-form">
+                            <!-- 上传图片 -->
+                            <div class="upload-field">
+                                <label for="image-upload">选择图片：</label>
+                                <input type="file" id="image-upload" name="image" accept="image/*">
+                            </div>
+                
+                            <!-- 上传文字 -->
+                            <div class="upload-field">
+                                <label for="text-upload">输入文字：</label>
+                                <textarea id="text-upload" name="text" placeholder="输入一些文字..." rows="4" required></textarea>
+                            </div>
+                
+                            <button type="submit">提交</button>
+                        </form>
+                    </div>                   
+                </div>
+
+
+<!--  -->
+                <div id="diary">
+                    <p>234</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="../js/biaodian.js"></script>
+    <script src="../js/insertform.js"></script>
+</body>
+</html>

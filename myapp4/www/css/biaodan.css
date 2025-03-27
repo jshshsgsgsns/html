@@ -1,0 +1,238 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100vh;
+    background-color: #999;
+}
+
+#header {
+    /* display: flex; */
+    width: 100%;
+    height: 100px;
+    background-color: aquamarine;
+}
+
+#main {
+    display: flex;
+    width: 100%;
+    flex-grow: 1;
+    background-color: red;
+}
+
+#main-left {
+    /* width:  18%; */
+    width: 150px;
+    height: 100%;
+    background-color: #fff;
+}
+
+#main-right {
+    flex-grow: 1;
+    background-color: #ffe;
+    overflow: scroll;
+    max-width: calc(100vw - 150px);
+    max-height: calc(100vh - 100px);
+
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+
+nav li a {
+
+    text-decoration: none;
+    display: block;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    color: black;
+}
+
+nav li a.active {
+    color: aquamarine;
+}
+
+
+#main-right>div {
+    display: none;
+}
+
+#main-right>div.active {
+    display: flex;
+
+}
+
+#home {
+    display: flex;
+    justify-content: flex-start;
+    /* 水平居中 */
+    align-items: center;
+    /* text-align: center; */
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-size: 16px;
+}
+
+#main-right>div {
+    display: none;
+    background-color: #ffe;
+}
+
+#home > div{
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 20px;
+    margin: 30px;
+
+}
+
+#home div div {
+    display: flex;
+}
+
+#home div div img {
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 150px;
+    height: 150px;
+}
+
+#home div div p {
+    margin: 0;
+    margin-top: 20px;
+    width: 181px;
+    height: 150px;
+    word-wrap: break-word;
+}
+
+#home div p {
+    margin: 0;
+    padding-left: 20px;
+}
+
+#homebut {
+    position: fixed;
+    bottom: 20px;
+    /* 按钮距离底部20px */
+    right: 20px;
+    /* 按钮距离右侧20px */
+    background-color: #4CAF50;
+    /* 按钮背景颜色 */
+    color: white;
+    /* 按钮文字颜色 */
+    border: none;
+    padding: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 50%;
+    /* 使按钮圆形 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* 添加按钮阴影 */
+}
+
+#insert {
+    font-size: 16px;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    height: 100%;
+    color: black;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    width: 500px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #4CAF50;
+}
+
+.upload-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.upload-field {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#insert label {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+#insert input[type="file"] {
+    display: none; /* 隐藏默认的文件选择按钮 */
+}
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.custom-file-upload:hover {
+    background-color: #45a049;
+}
+
+textarea {
+    width: calc(100% - 20px);
+    /* 符号边上必须要空格 */
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+    resize: vertical;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+
+
+#diary {
+    font-size: 100px;
+}

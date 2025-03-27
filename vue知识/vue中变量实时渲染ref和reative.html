@@ -1,8 +1,24 @@
+<style>
+    h1 , h2 ,p{
+        text-align: center;
+    }
+</style>
+
+
 <h1>ref和reactive的差别</h1>
 <p>ref---》基本数据类型和
     <br>
     reactive----》对象类型类型
+    <br>
+    <br>
 </p>
+    <h2>使用场景</h2>
+    <p>若需要一个基本类型的响应式类型，必须要ref
+        <br>
+        若需要一个响应式对象类型，层次不深，ref，reactive都可以
+        <br>
+        若需要一个响应式对象类型，且层次较深，推荐使用reactive；
+    </p>
 
 <h1>ref</h1>
 <p>ref针对的是基础数据类型</p>
@@ -21,6 +37,10 @@
     但在html里面变量直接使用people对象。
     <br>
     这个人名字：{{people}}
+
+    ref创建的变量改变值必须需要value进行修改
+    <br>
+    直接修改值也还是响应式数据，并没有修改地址，只是修改ref对象里面的值
 </p>
 
 <h1>rective</h1>
@@ -34,5 +54,16 @@
         name : 'zhangsan'
         <br>
     })
+
+    reactive 修改值会重新分配一个对象，会失去响应式（可以使用Object.assign进行替换）
+    <br>
+    Object.assihn(people,people1)
+    <br>
+
+    不能直接修改值
+    people = reactive (people1)
+    people = people1
+
+
 </p>
 
